@@ -6,19 +6,23 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import HelloWorld from '../components/vue/HelloWorld.vue';
 import ReactHelloWorld from '../components/react/ReactHelloWorld';
 import { Code } from 'astro/components';
+import '@fontsource/zcool-xiaowei';
+
+import {Content as IndexContent} from "../content/index/index.md"
 ---
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body class="w-full bg-caolvbai">
+	<body class="w-full bg-caolvbai flex flex-col items-center p-1">
 		<Header title={SITE_TITLE} />
-		<main>
-		 <HelloWorld></HelloWorld>
-		 <ReactHelloWorld></ReactHelloWorld>
-		 <Code code={`const foo = 'bar';`} lang="js" theme={'solarized-light'}/>
+		<main class="w-full lg:w-6/12">
+		 <!-- <ReactHelloWorld></ReactHelloWorld> -->
+		 <IndexContent></IndexContent>
+		 <!-- <Code code={`const foo = 'bar';`} lang="js" theme={'solarized-light'}/> -->
 		</main>
 		<Footer />
 	</body>
 </html>
+
