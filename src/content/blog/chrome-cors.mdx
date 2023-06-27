@@ -1,0 +1,40 @@
+---
+title: 'Chrome浏览器开启同源策略'
+description: '上图所示为最终浏览器效果，方便前端开发者直接请求后端API,不受Chrome同源策略限制。（本篇博客仅用于开发者使用，正常请勿用）'
+pubDate: ' June 27 2023'
+heroImage: '/chrome-cors.png'
+---
+由于现在Web项目中大多采用前后端分离开发，所以无可避免需要跨域访问后端API。但是由于浏览器安全性限制，目前大多数前端工程师
+采用Nginx等反向代理软件进行中转，但操作较为麻烦，且对于大部分不熟悉Nginx等反向代理软件的人来说，使用有一定难度。因此迫切
+的需要Chrome关闭同源策略，可以进行CORS。
+
+无独有偶，Chrome是有这方面的后门的，具体操作如下：
+- 1.在C盘创建如下目录`MyChromeDevUserData`
+- 2.复制一个Chrome快捷方式命名为dev
+- 3.鼠标邮件选择属性->选择快捷方式
+- 4.在目标输入框尾部加入`--args --disable-web-security --user-data-dir=C:\MyChromeDevUserData`
+    输入完成后的如下面两幅图所示。
+```shell
+"C:\Program Files\Google\Chrome\Application\chrome.exe" --args --disable-web-security --user-data-dir=C:\MyChromeDevUserData
+```
+<img class="rounded-xl my-2" src="/chrome-cors/c1.png" alt="漂上月球，宇宙飞船。" />
+
+- 5.点击确定重新打开浏览器，最终会出现本文最上面的结果图片，证明Google浏览器关闭同源策略成功。
+
+<div class="text-2xl font-bold text-shenhuilan my-2" >为什么这么做？</div>
+<div>
+    Chrome本身也是一个软件，所以其开发者必定为了方便测试与开发留下了诸多命令。推荐一个网站:
+    <a class="underline underline-offset-2 text-red-600" href="https://peter.sh/experiments/chromium-command-line-switches">https://peter.sh/experiments/chromium-command-line-switches/</a>
+    方便大家查找Chrome支持的命令。
+    <img class="rounded-xl my-2" src="/chrome-cors/c2.png" alt="漂上月球，宇宙飞船。" />
+
+    我们可以在网页上搜索”--disable-web-security“
+     <img class="rounded-xl my-2" src="/chrome-cors/c3.png" alt="漂上月球，宇宙飞船。" />
+    这句话的含义就是：”不强制执行同源策略； 仅用于网站测试。 除非 --user-data-dir （由内容嵌入器定义）也存在，否则此开关无效。“
+    我们的解决办法就来源于这句话。
+</div>
+<div class="text-2xl font-bold text-shenhuilan my-2" >感受</div>
+<div class="border-solid border-2 border-teal-600 rounded-lg p-5">
+    开发人员往往在开发程序时，会留下各种后门。方便后续维护开发和测试，一方面会造成安全隐患，但一方面也恰好是将来开发，维护的保障。
+    这是一把双刃剑。
+</div>

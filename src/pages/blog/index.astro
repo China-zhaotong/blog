@@ -5,7 +5,7 @@ import Footer from '../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
-
+import '@fontsource/zcool-xiaowei';
 const posts = (await getCollection('blog')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
@@ -36,12 +36,12 @@ const posts = (await getCollection('blog')).sort(
 	<body class="w-full bg-caolvbai flex flex-col items-center p-1">
 		<Header />
 		<main class="w-full lg:w-6/12">
-			<section>
+			<section class="border-solid border-2 border-teal-600 rounded-lg p-5">
 				<ul>
 					{
 						posts.map((post) => (
-							<li>
-								<FormattedDate date={post.data.pubDate} />
+							<li class="my-2">
+								<FormattedDate  date={post.data.pubDate} />
 								<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
 							</li>
 						))

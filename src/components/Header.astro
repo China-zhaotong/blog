@@ -4,20 +4,21 @@ import { SITE_TITLE } from "../consts";
 import HelloWorld from './vue/HelloWorld.vue';
 ---
 
-<header
-	class="w-full lg:w-6/12 h-26 lg:my-2 bg-shenhuilan text-white p-3 rounded shadow-xl flex justify-between"
+<header 
+	class="w-full lg:w-6/12 h-26 lg:my-2 bg-gradient-to-r from-shenhuilan to-teal-600  text-white p-3 rounded shadow-xl flex justify-between"
 >
 	<nav>
 		<div class="text-2xl font-black">{SITE_TITLE}</div>
 		<HeaderLink class="mt-6" href="/">主页</HeaderLink>
-		<HeaderLink class="mx-2" href="/blog">博客</HeaderLink>
-		<HeaderLink href="/about">个人介绍</HeaderLink>
+		<HeaderLink class="mx-2" href="/blog">编程技术</HeaderLink>
+		<HeaderLink href="/about">诸子百家</HeaderLink>
 	</nav>
 	<HelloWorld client:load></HelloWorld>
 </header>
 <style>
 	header {
 		margin: 0em 0 2em;
+		font-family: "ZCOOL XiaoWei", sans-serif;
 	}
 	h2 {
 		margin: 0.5em 0;
