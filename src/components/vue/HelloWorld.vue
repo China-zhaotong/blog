@@ -3,14 +3,14 @@
 </template>
 <script setup lang="ts">
 import { ref, getCurrentInstance, onMounted } from 'vue';
-import * as zrender from "zrender";
+
+import * as zrender from 'zrender';
 import  gsap from "gsap";
 const pageInstance = getCurrentInstance()
 const main = ref(null);
 onMounted(() => {
-    console.log(1111111111)
     const ele: any = pageInstance?.refs.main
-    console.log(ele)
+  
     const zr = zrender.init(ele);
 
     var circle = new zrender.Arc({
@@ -115,6 +115,4 @@ onMounted(() => {
         duration:2
     })
 })
-
-let count = ref(999);
 </script>

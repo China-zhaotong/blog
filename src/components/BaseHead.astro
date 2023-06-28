@@ -23,7 +23,17 @@ const { title, description } = Astro.props;
 <meta name="title" content={title} />
 <meta name="description" content={description} />
 <style>
+	/* 注册你的自定义字体并告诉浏览器它在哪里 */
+	@font-face {
+		font-family: "DistantGalaxy";
+		src: url("/font/Alimama_DongFangDaKai_Regular.woff") format("woff");
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
 	body {
-		font-family: "ZCOOL XiaoWei", sans-serif;
+		font-family: 'DistantGalaxy', sans-serif;
+		font-weight: 400;
+		font-display: swap;
 	}
 </style>
