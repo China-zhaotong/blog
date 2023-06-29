@@ -1,7 +1,7 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
-// import HelloWorld from './vue/HelloWorld.vue';
+import Taiji from './vue/TaiJi.vue';
 ---
 
 <header 
@@ -13,7 +13,7 @@ import { SITE_TITLE } from "../consts";
 		<HeaderLink class="mx-2" href="/blog">编程技术</HeaderLink>
 		<HeaderLink href="/zzbj">诸子百家</HeaderLink>
 	</nav>
-	<!-- <HelloWorld client:load></HelloWorld> -->
+	<Taiji client:only></Taiji>
 </header>
 <style>
 	header {
