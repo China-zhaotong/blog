@@ -1,9 +1,12 @@
 ---
 title: 'Chrome浏览器关闭同源策略实现Web跨域访问'
 description: '上图所示为最终浏览器效果，方便前端开发者直接请求后端API,关闭Chrome同源策略限制。（本篇博客仅用于开发者使用，正常请勿用）'
-pubDate: ' June 27 2023'
+pubDate: ' June 29 2023'
 heroImage: '/chrome-cors.png'
 ---
+
+import { Code } from 'astro/components';
+
 由于现在Web项目中大多采用前后端分离开发，所以无可避免需要跨域访问后端API。但是由于浏览器安全性限制，目前大多数前端工程师
 采用Nginx等反向代理软件进行中转，但操作较为麻烦，且对于大部分不熟悉Nginx等反向代理软件的人来说，使用有一定难度。因此迫切
 的需要Chrome关闭同源策略，可以进行CORS。
@@ -14,9 +17,10 @@ heroImage: '/chrome-cors.png'
 - 3.鼠标邮件选择属性->选择快捷方式
 - 4.在目标输入框尾部加入`--args --disable-web-security --user-data-dir=C:\MyChromeDevUserData`
     输入完成后的如下面两幅图所示。
-```shell
-"C:\Program Files\Google\Chrome\Application\chrome.exe" --args --disable-web-security --user-data-dir=C:\MyChromeDevUserData
-```
+
+
+<Code code={`"C:\Program Files\Google\Chrome\Application\chrome.exe" --args --disable-web-security --user-data-dir=C:\MyChromeDevUserData`} lang="bash" theme="vitesse-light" />
+
 <img class="rounded-xl my-2" src="/chrome-cors/c1.png" alt="漂上月球，宇宙飞船。" />
 
 - 5.点击确定重新打开浏览器，最终会出现本文最上面的结果图片，证明Google浏览器关闭同源策略成功。
