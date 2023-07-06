@@ -35,7 +35,7 @@ export default defineConfig({
       // Enable word wrap to prevent horizontal scrolling
       wrap: true,
     },
-    remarkPlugins:[remarkMath,remarkParse],
-    rehypePlugins:[rehypeKatex,remarkReHype,rehypeStringify]
+    remarkPlugins:[remarkMath],
+    rehypePlugins:[rehypeKatex]
   },
 });
