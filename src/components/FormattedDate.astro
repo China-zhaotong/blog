@@ -1,16 +1,13 @@
 ---
 const { date } = Astro.props;
-
-let dateTime = "";
-if (date.toLocaleDateString) {
-	dateTime = date.toLocaleDateString("zh-CN", {
-		year: "numeric",
-		month: "short",
-		day: "numeric",
-	});
-} else {
-	dateTime = date;
-}
 ---
 
-<div class=" text-shenhuilan mr-2">{dateTime}</div>
+<time datetime={date.toISOString()}>
+	{
+		date.toLocaleDateString('zh-CN', {
+			year: 'numeric',
+			month: 'short',
+			day: 'numeric',
+		})
+	}
+</time>

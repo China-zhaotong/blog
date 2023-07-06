@@ -1,0 +1,20 @@
+---
+title: '【微积分】《基础一》'
+description: '导数和微分，偏导数，梯度，链式法则'
+pubDate: 'July 07 2023'
+---
+<div class="w-full h-full  mt-4">
+    <div class="leading-8">
+      首先讨论导数的计算，这是几乎所有深度学习优化算法的关键步骤。 在深度学习中，我们通常选择对于模型参数可微的损失函数。 简而言之，对于每个参数， 如果我们把这个参数增加或减少一个无穷小的量，可以知道损失会以多快的速度增加或减少，
+假设我们有一个函数$$ {f}:R\to R $$，其输入和输出都是标量。 如果的导数存在，这个极限被定义为:
+    </div>
+    $$
+        \begin{align}
+            {f}' \left ( x \right ) & = \lim_{h \to 0} \frac{f\left ( x +  h\right ) - f\left ( x \right ) }{h}
+        \end{align}
+    $$
+    <div>
+        如果$${f}' \left ( a \right ) $$存在，则称$${f}$$在$${a}$$处是可微（differentiable）的。 如果在一个区间内的每个数上都是可微的，则此函数在此区间中是可微的。 我们可以将上图中的导数
+        $${f}' \left ( x \right ) $$解释为$${f} \left ( x \right ) $$相对于$${x}$$的瞬时（instantaneous）变化率。 所谓的瞬时变化率是基于$${x}$$中$${h}$$的变化，且$${h}$$接近$${0}$$。
+    </div>
+</div>
